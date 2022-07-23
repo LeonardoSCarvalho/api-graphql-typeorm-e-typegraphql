@@ -1,20 +1,23 @@
 import {
-  BaseEntity,
-  BeforeInsert,
-  Column,
-  Entity,
-   Field,
-  ObjectType,
-  PrimaryGeneratedColumn,
+   BaseEntity,
+   BeforeInsert,
+   Column,
+   Entity,
+   PrimaryGeneratedColumn,
 } from "typeorm";
+import { Pet } from '../../../pets/database/entities/Pet'
+import { ObjectType, ID, Field } from 'type-graphql'
 import bcrypt from "bcryptjs";
 
 @Entity("users")
 @ObjectType()
 export class User extends BaseEntity {
   @PrimaryGeneratedColumn("uuid")
-  @Field(() => ID)
+  @Field(() =>  ID)
   id: string;
+
+  @Fiel(() => [Pet])
+  pets: Pet[]
 
   @Column()
   @Field()
