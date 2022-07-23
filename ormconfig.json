@@ -1,0 +1,11 @@
+{
+  "type": "postgres",
+  "port": 5432,
+  "host": "localhost",
+  "username": "admin",
+  "password": "admin",
+  "database": "typegraphql",
+  "logging": true,
+  "synchronize": true,
+  "entities": ["./src/modules/**/database/entities/*.ts"]
+}
